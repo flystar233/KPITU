@@ -23,3 +23,28 @@ This is the KPITU (Knee Point Identification Based on Trade-Off Utility) algorit
    4.7返回内部解：返回内部解对应的原始数据点。
    
 这个R脚本的主要应用场景是在多目标优化问题中找到最佳的拐点，也就是那些在目标之间达到最佳平衡的解。
+
+## 示例
+```r
+library(ggplot2)
+data1<- read.table('PMOP1_M2_A4.out',header=F)
+knee_point1<- main_function(as.matrix(data1),1)
+
+ggplot() +
+geom_point(data = data1, aes(x = V1, y = V2), color = "black") +
+geom_point(data = knee_point1, aes(x = V1, y = V2,color = "red"), size = 4) +
+labs(colour = "Knee point") +
+guides(size = FALSE)
+
+
+data2<- read.table('PMOP1_M2_A2.out',header=F)
+knee_point2<- main_function(as.matrix(data2),1)
+
+ggplot() +
+geom_point(data = data2, aes(x = V1, y = V2), color = "black") +
+geom_point(aes(x = knee_point2[1], y = knee_point2[2],color = "red"), size = 4) +
+labs(colour = "Knee point") +
+guides(size = FALSE)
+```
+![PMOP1_M2_A4](https://github.com/flystar233/KPITU/assets/20431495/5022e926-2dbe-4dda-84b9-2d3d900bfc24)
+![PMOP1_M2_A2](https://github.com/flystar233/KPITU/assets/20431495/59110a51-ecb4-42db-8bd5-900f202c855c)
