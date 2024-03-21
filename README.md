@@ -1,6 +1,7 @@
 # KPITU
 This is the KPITU (Knee Point Identification Based on Trade-Off Utility) algorithm writing by R
-这个R脚本主要用于计算数据的最佳拐点。下面是对每个部分的解释：
+这个R脚本主要用于计算数据的最佳拐点。
+代码参考于：https://github.com/COLA-Laboratory/kpi, 90% 的代码由AI生成,并进行人工检查，原代码功能已复刻且通过测试。
 ## AI 代码解释
 1. 定义 solution 和 reference_point 类：这两个类被用来表示解和参考点。每个解包含一个目标值，邻居列表，贡献度，关联的参考点等信息。参考点包含一个方向，邻居列表和关联的解。
 2. 定义 transfer 和 select 函数：transfer 函数用于判断两个解之间是否存在转移，select 函数用于计算两个解的目标值之差。
