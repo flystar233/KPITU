@@ -281,5 +281,3 @@ main_function <- function(data, K) {
     internal_points <- data[Internal_index, ]
     return(internal_points)
 }
-data<- read.table('PMOP1_M2_A4.out',header=F)
-print(main_function(as.matrix(data),1))
